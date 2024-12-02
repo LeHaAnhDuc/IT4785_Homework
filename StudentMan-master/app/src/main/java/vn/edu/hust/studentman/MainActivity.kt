@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
+import androidx.fragment.app.replace
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -54,8 +56,12 @@ class MainActivity : AppCompatActivity()
     }
     studentAdap = studentAdapter
     findViewById<Button>(R.id.btn_add_new).setOnClickListener {
-      findNavController(R.id.nav_host_fragment).navigate(R.id.action_mainActivity_to_addNewFragment)
-    }
+    val addStudentFrag = AddStudentFragment();
+      supportFragmentManager.beginTransaction().apply {
+        add(R.id.main, addStudentFrag).commit()
+      }
+
+     }
   }
   fun showAddStudentDialog() {
     val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_add_student, null)
