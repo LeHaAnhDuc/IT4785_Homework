@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:id = "@+id/fragment_add_student"
+    tools:context=".AddStudentFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Tên sinh viên -->
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập tên sinh viên"
+            android:inputType="textPersonName"
+            android:padding="8dp" />
+
+        <!-- Mã sinh viên -->
+        <EditText
+            android:id="@+id/etId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập mã sinh viên"
+            android:inputType="text"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnAddStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="THÊM"
+            android:layout_marginTop="16dp"
+            android:padding="12dp"
+            android:backgroundTint="@color/design_default_color_primary"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</FrameLayout>

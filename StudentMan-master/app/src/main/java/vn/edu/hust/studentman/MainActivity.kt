@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
@@ -52,7 +54,7 @@ class MainActivity : AppCompatActivity()
     }
     studentAdap = studentAdapter
     findViewById<Button>(R.id.btn_add_new).setOnClickListener {
-      showAddStudentDialog()
+      findNavController(R.id.nav_host_fragment).navigate(R.id.action_mainActivity_to_addNewFragment)
     }
   }
   fun showAddStudentDialog() {
